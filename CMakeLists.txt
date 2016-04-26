@@ -16,8 +16,9 @@ option(OSCOPE_BUILD_SHARED  "Build NanoGUI as a shared library?" ON)
 # Required libraries for linking against nanogui (all targets)
 set(OSCOPE_EXTRA_LIBS "")
 
-# Platform-dependent files for libnanogui
+# Platform-dependent files for liboscope
 set(LIBOSCOPE_EXTRA_SOURCE "")
+set(OSCOPE_EXTRA_SOURCE "")
 
 if(APPLE AND OSCOPE_BUILD_SHARED)
   set(CMAKE_MACOSX_RPATH ON)
@@ -41,7 +42,11 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # Compile NanoGUI
+SET(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL "Turning off nanogui examples")
+SET(NANOGUI_BUILD_PYTHON OFF CACHE BOOL "Turning off nanogui examples")
+
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/nanogui" "externals_build/nanogui")
+list(APPEND OSCOPE_EXTRA_LIBS nanogui)
 
 # Shared library mode: add OSCOPE_SHARED flag to all targets
 if (OSCOPE_BUILD_SHARED)
@@ -109,10 +114,12 @@ elseif (APPLE)
   find_library(corevideo_library CoreVideo)
   find_library(iokit_library IOKit)
   list(APPEND OSCOPE_EXTRA_LIBS ${cocoa_library} ${opengl_library} ${corevideo_library} ${iokit_library})
-  list(APPEND LIBOSCOPE_EXTRA_SOURCE src/darwin.mm)
+  list(APPEND LIBOSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
 elseif(CMAKE_SYSTEM MATCHES "Linux")
   list(APPEND OSCOPE_EXTRA_LIBS GL Xxf86vm Xrandr Xinerama Xcursor Xi X11 pthread dl rt)
 endif()
+
+
 
 include_directories(externals/nanogui/include externals/nanogui/ext/eigen externals/nanogui/ext/glfw/include externals/nanogui/ext/nanovg/src include ${CMAKE_CURRENT_BINARY_DIR})
 
@@ -129,7 +136,7 @@ endif()
 # Compile main Oscope library
 add_library(oscope ${OSCOPE_LIBRARY_TYPE}
   # Merge NanoGUI into the Oscope library
-  #$<TARGET_OBJECTS:nanogui_objects>
+  #$<TARGET_OBJECTS:nanogui>
   # Merge NanoVG into the NanoGUI library
   #ext/nanovg/src/nanovg.c
   # Merge GLAD into the NanoGUI library (only if needed)
@@ -167,7 +174,7 @@ if (OSCOPE_BUILD_SHARED AND NOT ${U_CMAKE_BUILD_TYPE} MATCHES DEBUG)
     add_custom_command(TARGET oscope POST_BUILD COMMAND strip -u -r ${CMAKE_CURRENT_BINARY_DIR}/liboscope.dylib)
   elseif(UNIX)
     # Strip .so library on Linux
-    # add_custom_command(TARGET oscope POST_BUILD COMMAND strip ${CMAKE_CURRENT_BINARY_DIR}/liboscope.so)
+    add_custom_command(TARGET oscope POST_BUILD COMMAND strip ${CMAKE_CURRENT_BINARY_DIR}/liboscope.so)
   endif()
 endif()
 
@@ -183,9 +190,14 @@ else()
     ${CMAKE_CURRENT_SOURCE_DIR}/include/nanogui/*.h > ${CMAKE_CURRENT_SOURCE_DIR}/python/py_doc.h)
 endif()
 
+list(APPEND OSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
+
 # Compile the application Oscope
 add_executable(oscope_app 
+  ${OSCOPE_EXTRA_SOURCE}
   src/app/main.cpp
+  src/app/Application.hpp src/app/Application.cpp
+  src/app/NonMovableWindow.hpp src/app/NonMovableWindow.cpp
 )
 target_link_libraries(oscope_app oscope ${OSCOPE_EXTRA_LIBS})
 # Copy icons for example application

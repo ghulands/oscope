@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		790D5AEF1CCF0FFE00AB701E /* NonMovableWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 790D5AED1CCF0FFE00AB701E /* NonMovableWindow.cpp */; };
+		791880391CCEEABB00EF452E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880381CCEEABB00EF452E /* main.cpp */; };
+		791880511CCEEDEB00EF452E /* liboscope.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918804B1CCEEDE100EF452E /* liboscope.dylib */; };
+		791880521CCEEE6D00EF452E /* version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880431CCEED9B00EF452E /* version.cpp */; };
+		791880551CCEEFA100EF452E /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880531CCEEFA100EF452E /* Application.cpp */; };
+		791880571CCEF34A00EF452E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791880561CCEF34A00EF452E /* Cocoa.framework */; };
+		791880591CCEF3BA00EF452E /* ScreenDimensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 791880581CCEF3BA00EF452E /* ScreenDimensions.mm */; };
+		7918805B1CCEF8B400EF452E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
+		7918805C1CCEF8C800EF452E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
+		7918805D1CCEF93900EF452E /* libnanogui.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7918804F1CCEEDE800EF452E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 797F52A31CCEEA74005368A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7918804A1CCEEDE100EF452E;
+			remoteInfo = oscope;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		797F52A91CCEEA74005368A0 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7918805D1CCEF93900EF452E /* libnanogui.dylib in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		790D5AED1CCF0FFE00AB701E /* NonMovableWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NonMovableWindow.cpp; path = src/app/NonMovableWindow.cpp; sourceTree = SOURCE_ROOT; };
+		790D5AEE1CCF0FFE00AB701E /* NonMovableWindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NonMovableWindow.hpp; path = src/app/NonMovableWindow.hpp; sourceTree = SOURCE_ROOT; };
+		791880381CCEEABB00EF452E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/app/main.cpp; sourceTree = SOURCE_ROOT; };
+		791880431CCEED9B00EF452E /* version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = version.cpp; path = src/lib/version.cpp; sourceTree = "<group>"; };
+		7918804B1CCEEDE100EF452E /* liboscope.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liboscope.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		791880531CCEEFA100EF452E /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Application.cpp; path = src/app/Application.cpp; sourceTree = SOURCE_ROOT; };
+		791880541CCEEFA100EF452E /* Application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Application.hpp; path = src/app/Application.hpp; sourceTree = SOURCE_ROOT; };
+		791880561CCEF34A00EF452E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		791880581CCEF3BA00EF452E /* ScreenDimensions.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ScreenDimensions.mm; path = src/app/ScreenDimensions.mm; sourceTree = SOURCE_ROOT; };
+		7918805A1CCEF8B400EF452E /* libnanogui.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnanogui.dylib; path = externals_build/nanogui/libnanogui.dylib; sourceTree = "<group>"; };
+		797F52AB1CCEEA74005368A0 /* oscope_app */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oscope_app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		791880481CCEEDE100EF452E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7918805B1CCEF8B400EF452E /* libnanogui.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797F52A81CCEEA74005368A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7918805C1CCEF8C800EF452E /* libnanogui.dylib in Frameworks */,
+				791880571CCEF34A00EF452E /* Cocoa.framework in Frameworks */,
+				791880511CCEEDEB00EF452E /* liboscope.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7918803A1CCEECE200EF452E /* liboscope */ = {
+			isa = PBXGroup;
+			children = (
+				791880431CCEED9B00EF452E /* version.cpp */,
+			);
+			name = liboscope;
+			sourceTree = "<group>";
+		};
+		797F52A21CCEEA74005368A0 = {
+			isa = PBXGroup;
+			children = (
+				7918805A1CCEF8B400EF452E /* libnanogui.dylib */,
+				791880561CCEF34A00EF452E /* Cocoa.framework */,
+				7918803A1CCEECE200EF452E /* liboscope */,
+				797F52AD1CCEEA74005368A0 /* oscope_app */,
+				797F52AC1CCEEA74005368A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		797F52AC1CCEEA74005368A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				797F52AB1CCEEA74005368A0 /* oscope_app */,
+				7918804B1CCEEDE100EF452E /* liboscope.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		797F52AD1CCEEA74005368A0 /* oscope_app */ = {
+			isa = PBXGroup;
+			children = (
+				791880381CCEEABB00EF452E /* main.cpp */,
+				791880531CCEEFA100EF452E /* Application.cpp */,
+				791880541CCEEFA100EF452E /* Application.hpp */,
+				791880581CCEF3BA00EF452E /* ScreenDimensions.mm */,
+				790D5AED1CCF0FFE00AB701E /* NonMovableWindow.cpp */,
+				790D5AEE1CCF0FFE00AB701E /* NonMovableWindow.hpp */,
+			);
+			path = oscope_app;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		791880491CCEEDE100EF452E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7918804A1CCEEDE100EF452E /* oscope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7918804C1CCEEDE100EF452E /* Build configuration list for PBXNativeTarget "oscope" */;
+			buildPhases = (
+				791880471CCEEDE100EF452E /* Sources */,
+				791880481CCEEDE100EF452E /* Frameworks */,
+				791880491CCEEDE100EF452E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oscope;
+			productName = oscope;
+			productReference = 7918804B1CCEEDE100EF452E /* liboscope.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		797F52AA1CCEEA74005368A0 /* oscope_app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 797F52B21CCEEA74005368A0 /* Build configuration list for PBXNativeTarget "oscope_app" */;
+			buildPhases = (
+				797F52A71CCEEA74005368A0 /* Sources */,
+				797F52A81CCEEA74005368A0 /* Frameworks */,
+				797F52A91CCEEA74005368A0 /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				791880501CCEEDE800EF452E /* PBXTargetDependency */,
+			);
+			name = oscope_app;
+			productName = oscope_app;
+			productReference = 797F52AB1CCEEA74005368A0 /* oscope_app */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		797F52A31CCEEA74005368A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				TargetAttributes = {
+					7918804A1CCEEDE100EF452E = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					797F52AA1CCEEA74005368A0 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 797F52A61CCEEA74005368A0 /* Build configuration list for PBXProject "oscope_app" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 797F52A21CCEEA74005368A0;
+			productRefGroup = 797F52AC1CCEEA74005368A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				797F52AA1CCEEA74005368A0 /* oscope_app */,
+				7918804A1CCEEDE100EF452E /* oscope */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		791880471CCEEDE100EF452E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791880521CCEEE6D00EF452E /* version.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		797F52A71CCEEA74005368A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				791880551CCEEFA100EF452E /* Application.cpp in Sources */,
+				791880391CCEEABB00EF452E /* main.cpp in Sources */,
+				790D5AEF1CCF0FFE00AB701E /* NonMovableWindow.cpp in Sources */,
+				791880591CCEF3BA00EF452E /* ScreenDimensions.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		791880501CCEEDE800EF452E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7918804A1CCEEDE100EF452E /* oscope */;
+			targetProxy = 7918804F1CCEEDE800EF452E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7918804D1CCEEDE100EF452E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					externals/nanogui/include,
+					include/,
+					externals/nanogui/ext/eigen/,
+					externals/nanogui/ext/glad/include/,
+					externals/nanogui/ext/glfw/include/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/externals_build/nanogui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7918804E1CCEEDE100EF452E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = (
+					externals/nanogui/include,
+					include/,
+					externals/nanogui/ext/eigen/,
+					externals/nanogui/ext/glad/include/,
+					externals/nanogui/ext/glfw/include/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/externals_build/nanogui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		797F52B01CCEEA74005368A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		797F52B11CCEEA74005368A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		797F52B31CCEEA74005368A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					externals/nanogui/include,
+					include/,
+					externals/nanogui/ext/eigen/,
+					externals/nanogui/ext/glfw/include/,
+					externals/nanogui/ext/glad/include/,
+					externals/nanogui/ext/nanovg/src/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/externals_build/nanogui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		797F52B41CCEEA74005368A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					externals/nanogui/include,
+					include/,
+					externals/nanogui/ext/eigen/,
+					externals/nanogui/ext/glfw/include/,
+					externals/nanogui/ext/glad/include/,
+					externals/nanogui/ext/nanovg/src/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/externals_build/nanogui",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7918804C1CCEEDE100EF452E /* Build configuration list for PBXNativeTarget "oscope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7918804D1CCEEDE100EF452E /* Debug */,
+				7918804E1CCEEDE100EF452E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		797F52A61CCEEA74005368A0 /* Build configuration list for PBXProject "oscope_app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797F52B01CCEEA74005368A0 /* Debug */,
+				797F52B11CCEEA74005368A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		797F52B21CCEEA74005368A0 /* Build configuration list for PBXNativeTarget "oscope_app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				797F52B31CCEEA74005368A0 /* Debug */,
+				797F52B41CCEEA74005368A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 797F52A31CCEEA74005368A0 /* Project object */;
+}
