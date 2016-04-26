@@ -42,10 +42,10 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # Compile NanoGUI
-SET(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL "Turning off nanogui examples")
-SET(NANOGUI_BUILD_PYTHON OFF CACHE BOOL "Turning off nanogui examples")
-
+SET(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL "Turning off nanogui examples" FORCE)
+SET(NANOGUI_BUILD_PYTHON OFF CACHE BOOL "Turning off nanogui python bindings" FORCE)
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/nanogui" "externals_build/nanogui")
+
 list(APPEND OSCOPE_EXTRA_LIBS nanogui)
 
 # Shared library mode: add OSCOPE_SHARED flag to all targets
@@ -190,7 +190,11 @@ else()
     ${CMAKE_CURRENT_SOURCE_DIR}/include/nanogui/*.h > ${CMAKE_CURRENT_SOURCE_DIR}/python/py_doc.h)
 endif()
 
-list(APPEND OSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
+if (APPLE)
+  list(APPEND OSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
+elseif(UNIX)
+  list(APPEND OSCOPE_EXTRA_SOURCE src/app/ScreenDimensions_X.cpp)
+endif()
 
 # Compile the application Oscope
 add_executable(oscope_app 
