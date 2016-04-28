@@ -8,15 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		790D5AEF1CCF0FFE00AB701E /* NonMovableWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 790D5AED1CCF0FFE00AB701E /* NonMovableWindow.cpp */; };
+		790D5AF11CCF2F8900AB701E /* sample.h in Headers */ = {isa = PBXBuildFile; fileRef = 790D5AF01CCF2F8900AB701E /* sample.h */; };
+		790D5AF31CCF2F9E00AB701E /* sample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 790D5AF21CCF2F9E00AB701E /* sample.cpp */; };
+		790D5AF51CCFA01000AB701E /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 790D5AF41CCFA01000AB701E /* common.h */; };
+		790D5AF71CCFA06C00AB701E /* version.h in Headers */ = {isa = PBXBuildFile; fileRef = 790D5AF61CCFA06C00AB701E /* version.h */; };
+		790D5AF91CD07C1700AB701E /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D5AF81CD07C1700AB701E /* OpenCL.framework */; };
+		790D5AFA1CD07CB100AB701E /* liboscope.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918804B1CCEEDE100EF452E /* liboscope.dylib */; };
+		790D5AFD1CD07D4C00AB701E /* libnanogui.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 790D5AFB1CD07CC600AB701E /* libnanogui.dylib */; };
+		790D5B011CD07E8500AB701E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D5AFB1CD07CC600AB701E /* libnanogui.dylib */; };
+		790D5B031CD07E9300AB701E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D5B021CD07E9300AB701E /* OpenGL.framework */; };
+		790D5B041CD07F2400AB701E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 790D5AFB1CD07CC600AB701E /* libnanogui.dylib */; };
+		790D5B061CD1318300AB701E /* coupling.h in Headers */ = {isa = PBXBuildFile; fileRef = 790D5B051CD1318300AB701E /* coupling.h */; };
 		791880391CCEEABB00EF452E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880381CCEEABB00EF452E /* main.cpp */; };
-		791880511CCEEDEB00EF452E /* liboscope.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918804B1CCEEDE100EF452E /* liboscope.dylib */; };
 		791880521CCEEE6D00EF452E /* version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880431CCEED9B00EF452E /* version.cpp */; };
 		791880551CCEEFA100EF452E /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 791880531CCEEFA100EF452E /* Application.cpp */; };
 		791880571CCEF34A00EF452E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791880561CCEF34A00EF452E /* Cocoa.framework */; };
 		791880591CCEF3BA00EF452E /* ScreenDimensions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 791880581CCEF3BA00EF452E /* ScreenDimensions.mm */; };
-		7918805B1CCEF8B400EF452E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
-		7918805C1CCEF8C800EF452E /* libnanogui.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
-		7918805D1CCEF93900EF452E /* libnanogui.dylib in Copy Files */ = {isa = PBXBuildFile; fileRef = 7918805A1CCEF8B400EF452E /* libnanogui.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				7918805D1CCEF93900EF452E /* libnanogui.dylib in Copy Files */,
+				790D5AFD1CD07D4C00AB701E /* libnanogui.dylib in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +53,16 @@
 /* Begin PBXFileReference section */
 		790D5AED1CCF0FFE00AB701E /* NonMovableWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NonMovableWindow.cpp; path = src/app/NonMovableWindow.cpp; sourceTree = SOURCE_ROOT; };
 		790D5AEE1CCF0FFE00AB701E /* NonMovableWindow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NonMovableWindow.hpp; path = src/app/NonMovableWindow.hpp; sourceTree = SOURCE_ROOT; };
+		790D5AF01CCF2F8900AB701E /* sample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sample.h; path = include/oscope/sample.h; sourceTree = "<group>"; };
+		790D5AF21CCF2F9E00AB701E /* sample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sample.cpp; sourceTree = "<group>"; };
+		790D5AF41CCFA01000AB701E /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = include/oscope/common.h; sourceTree = "<group>"; };
+		790D5AF61CCFA06C00AB701E /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = version.h; path = include/oscope/version.h; sourceTree = "<group>"; };
+		790D5AF81CD07C1700AB701E /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
+		790D5AFB1CD07CC600AB701E /* libnanogui.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libnanogui.dylib; path = build/externals_build/nanogui/libnanogui.dylib; sourceTree = "<group>"; };
+		790D5AFE1CD07E4200AB701E /* liboscope.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liboscope.dylib; path = build/liboscope.dylib; sourceTree = "<group>"; };
+		790D5B021CD07E9300AB701E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		790D5B051CD1318300AB701E /* coupling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = coupling.h; path = include/oscope/coupling.h; sourceTree = "<group>"; };
+		790D5B0E1CD1726A00AB701E /* oscope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = oscope.h; path = include/oscope/oscope.h; sourceTree = "<group>"; };
 		791880381CCEEABB00EF452E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/app/main.cpp; sourceTree = SOURCE_ROOT; };
 		791880431CCEED9B00EF452E /* version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = version.cpp; path = src/lib/version.cpp; sourceTree = "<group>"; };
 		7918804B1CCEEDE100EF452E /* liboscope.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liboscope.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7918805B1CCEF8B400EF452E /* libnanogui.dylib in Frameworks */,
+				790D5B041CD07F2400AB701E /* libnanogui.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +87,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7918805C1CCEF8C800EF452E /* libnanogui.dylib in Frameworks */,
+				790D5B031CD07E9300AB701E /* OpenGL.framework in Frameworks */,
+				790D5B011CD07E8500AB701E /* libnanogui.dylib in Frameworks */,
+				790D5AFA1CD07CB100AB701E /* liboscope.dylib in Frameworks */,
+				790D5AF91CD07C1700AB701E /* OpenCL.framework in Frameworks */,
 				791880571CCEF34A00EF452E /* Cocoa.framework in Frameworks */,
-				791880511CCEEDEB00EF452E /* liboscope.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +101,13 @@
 		7918803A1CCEECE200EF452E /* liboscope */ = {
 			isa = PBXGroup;
 			children = (
+				790D5B0E1CD1726A00AB701E /* oscope.h */,
+				790D5AF41CCFA01000AB701E /* common.h */,
+				790D5AF61CCFA06C00AB701E /* version.h */,
 				791880431CCEED9B00EF452E /* version.cpp */,
+				790D5AF01CCF2F8900AB701E /* sample.h */,
+				790D5AF21CCF2F9E00AB701E /* sample.cpp */,
+				790D5B051CD1318300AB701E /* coupling.h */,
 			);
 			name = liboscope;
 			sourceTree = "<group>";
@@ -90,6 +115,10 @@
 		797F52A21CCEEA74005368A0 = {
 			isa = PBXGroup;
 			children = (
+				790D5B021CD07E9300AB701E /* OpenGL.framework */,
+				790D5AFE1CD07E4200AB701E /* liboscope.dylib */,
+				790D5AFB1CD07CC600AB701E /* libnanogui.dylib */,
+				790D5AF81CD07C1700AB701E /* OpenCL.framework */,
 				7918805A1CCEF8B400EF452E /* libnanogui.dylib */,
 				791880561CCEF34A00EF452E /* Cocoa.framework */,
 				7918803A1CCEECE200EF452E /* liboscope */,
@@ -127,6 +156,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790D5AF11CCF2F8900AB701E /* sample.h in Headers */,
+				790D5B061CD1318300AB701E /* coupling.h in Headers */,
+				790D5AF71CCFA06C00AB701E /* version.h in Headers */,
+				790D5AF51CCFA01000AB701E /* common.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				791880521CCEEE6D00EF452E /* version.cpp in Sources */,
+				790D5AF31CCF2F9E00AB701E /* sample.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +282,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/externals_build/nanogui",
+					"$(PROJECT_DIR)/build/externals_build/nanogui",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -269,7 +303,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/externals_build/nanogui",
+					"$(PROJECT_DIR)/build/externals_build/nanogui",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -366,10 +400,11 @@
 					externals/nanogui/ext/glfw/include/,
 					externals/nanogui/ext/glad/include/,
 					externals/nanogui/ext/nanovg/src/,
+					build/externals_build/clhpp/include/,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/externals_build/nanogui",
+					"$(PROJECT_DIR)/build/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -385,10 +420,11 @@
 					externals/nanogui/ext/glfw/include/,
 					externals/nanogui/ext/glad/include/,
 					externals/nanogui/ext/nanovg/src/,
+					build/externals_build/clhpp/include/,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/externals_build/nanogui",
+					"$(PROJECT_DIR)/build/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

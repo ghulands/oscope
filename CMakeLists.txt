@@ -2,8 +2,6 @@ cmake_minimum_required (VERSION 2.8.3)
 
 project("Oscope")
 
-#message(FATAL_ERROR "current source dir ${CMAKE_CURRENT_SOURCE_DIR}")
-
 if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/externals/nanogui")
   message(FATAL_ERROR "The Oscope dependency repositories (nanogui, etc.) are missing! "
     "You probably did not clone the project with --recursive. It is possible to recover "
@@ -41,11 +39,22 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated-declarations")
 endif()
 
+# Compile Unity
+#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/unity" "externals_build/unity")
+
+# Compile CMock
+#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/cmock" "externals_build/cmock")
+
+# Compile OpenCL
+SET(UNITY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/externals/unity" CACHE BOOL "Set dependency location" FORCE)
+SET(CMOCK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/externals/cmock" CACHE BOOL "Set dependency location" FORCE)
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/clhpp" "externals_build/clhpp")
+#list(APPEND OSCOPE_EXTRA_LIBS OpenCL)
+
 # Compile NanoGUI
 SET(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL "Turning off nanogui examples" FORCE)
 SET(NANOGUI_BUILD_PYTHON OFF CACHE BOOL "Turning off nanogui python bindings" FORCE)
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/nanogui" "externals_build/nanogui")
-
 list(APPEND OSCOPE_EXTRA_LIBS nanogui)
 
 # Shared library mode: add OSCOPE_SHARED flag to all targets
@@ -113,7 +122,8 @@ elseif (APPLE)
   find_library(opengl_library OpenGL)
   find_library(corevideo_library CoreVideo)
   find_library(iokit_library IOKit)
-  list(APPEND OSCOPE_EXTRA_LIBS ${cocoa_library} ${opengl_library} ${corevideo_library} ${iokit_library})
+  find_library(opencl_library OpenCL)
+  list(APPEND OSCOPE_EXTRA_LIBS ${cocoa_library} ${opengl_library} ${corevideo_library} ${iokit_library} ${opencl_library})
   list(APPEND LIBOSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
 elseif(CMAKE_SYSTEM MATCHES "Linux")
   list(APPEND OSCOPE_EXTRA_LIBS GL Xxf86vm Xrandr Xinerama Xcursor Xi X11 pthread dl rt)
@@ -121,7 +131,7 @@ endif()
 
 
 
-include_directories(externals/nanogui/include externals/nanogui/ext/eigen externals/nanogui/ext/glfw/include externals/nanogui/ext/nanovg/src include ${CMAKE_CURRENT_BINARY_DIR})
+include_directories(externals/nanogui/include externals/nanogui/ext/eigen externals/nanogui/ext/glfw/include externals/nanogui/ext/nanovg/src externals_build/clhpp/include include ${CMAKE_CURRENT_BINARY_DIR})
 
 # Needed to generated files
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -143,6 +153,7 @@ add_library(oscope ${OSCOPE_LIBRARY_TYPE}
   ${LIBOSCOPE_EXTRA_SOURCE}
   # Fonts etc.
   include/oscope/version.h src/lib/version.cpp
+  include/oscope/sample.h #src/lib/sample.cpp
 )
 
 # Compile/link flags for Oscope
@@ -203,6 +214,14 @@ add_executable(oscope_app
   src/app/Application.hpp src/app/Application.cpp
   src/app/NonMovableWindow.hpp src/app/NonMovableWindow.cpp
 )
+target_include_directories(oscope_app PRIVATE ${PROJECT_BINARY_DIR}/externals_build/clhpp/include/ )
+if (APPLE)
+  set(OPENCL_HEADER_TARGET "generate_clhpp")
+else()
+  set(OPENCL_HEADER_TARGET "generate_cl2hpp")
+endif()
+
+add_dependencies(oscope_app oscope ${OPENCL_HEADER_TARGET})
 target_link_libraries(oscope_app oscope ${OSCOPE_EXTRA_LIBS})
 # Copy icons for example application
 file(COPY resources/icons DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

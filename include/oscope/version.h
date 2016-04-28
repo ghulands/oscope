@@ -1,21 +1,31 @@
 #ifndef _OSCOPE_VERSION_H_
 #define _OSCOPE_VERSION_H_
 
+#include <oscope/common.h>
+
 #include <string>
 
-namespace oscope {
+NAMESPACE_BEGIN(oscope)
 
-	using namespace std;
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-	struct Version {
-		uint8_t major;
-		uint8_t minor;
-		string git_revision;
+using namespace std;
 
-	public:
-		static Version instance();
-	};
-
+struct Version {
+    uint8_t major;
+    uint8_t minor;
+    string git_revision;
+    
+public:
+    static Version instance();
 };
+    
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
+NAMESPACE_END(oscope)
 
 #endif // _OSCOPE_VERSION_H_

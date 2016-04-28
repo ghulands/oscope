@@ -1,7 +1,8 @@
 #include <oscope/version.h>
 #include <pthread.h>
 
-namespace oscope {
+NAMESPACE_BEGIN(oscope)
+
 pthread_once_t version_once = PTHREAD_ONCE_INIT;
 
 static Version sVersion;
@@ -18,6 +19,5 @@ Version Version::instance() {
 	return sVersion;
 }
 
-
-}
+NAMESPACE_END(ocope)
 
