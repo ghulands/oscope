@@ -1,15 +1,6 @@
 [submodule "externals/nanogui"]
 	path = externals/nanogui
 	url = git://github.com/ghulands/nanogui.git
-[submodule "externals/libclcxx"]
-	path = externals/libclcxx
-	url = https://github.com/KhronosGroup/libclcxx.git
 [submodule "externals/clhpp"]
 	path = externals/clhpp
-	url = https://github.com/KhronosGroup/OpenCL-CLHPP.git
-[submodule "externals/unity"]
-	path = externals/unity
-	url = https://github.com/ThrowTheSwitch/Unity.git
-[submodule "externals/cmock"]
-	path = externals/cmock
-	url = https://github.com/ThrowTheSwitch/CMock.git
+	url = https://github.com/ghulands/OpenCL-CLHPP.git
