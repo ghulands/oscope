@@ -39,15 +39,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated-declarations")
 endif()
 
-# Compile Unity
-#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/unity" "externals_build/unity")
-
-# Compile CMock
-#add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/cmock" "externals_build/cmock")
-
 # Compile OpenCL
-SET(UNITY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/externals/unity" CACHE BOOL "Set dependency location" FORCE)
-SET(CMOCK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/externals/cmock" CACHE BOOL "Set dependency location" FORCE)
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/clhpp" "externals_build/clhpp")
 #list(APPEND OSCOPE_EXTRA_LIBS OpenCL)
 
