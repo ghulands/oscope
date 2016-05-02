@@ -1,4 +1,4 @@
-#include "sample.h"
+#include <oscope/sample.h>
 
 NAMESPACE_BEGIN(oscope)
 

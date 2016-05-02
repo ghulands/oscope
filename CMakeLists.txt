@@ -39,9 +39,39 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated-declarations")
 endif()
 
+if(DEFINED ENV{AMDAPPSDKROOT})
+  set(OPENCL_DIST_DIR $ENV{AMDAPPSDKROOT} CACHE PATH "OpenCL source dir")
+  if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR ${OPENCL_DIST_DIR}/lib/x86_64 )
+  else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR ${OPENCL_DIST_DIR}/lib/x86 )
+  endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+elseif(DEFINED ENV{INTELOCLSDKROOT})
+  set(OPENCL_DIST_DIR $ENV{INTELOCLSDKROOT} CACHE PATH "OpenCL source dir")
+  if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR ${OPENCL_DIST_DIR}/lib/x64 )
+  else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR ${OPENCL_DIST_DIR}/lib/x86 )
+  endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+elseif(APPLE)
+    find_library(opencl_library OpenCL)
+    set(OPENCL_DIST_DIR ${opencl_library} CACHE PATH "OpenCL source dir")
+else()
+  set(OPENCL_DIST_DIR "Hello" CACHE PATH "OpenCL source dir")
+  if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR "" )
+  else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
+    set(OPENCL_LIB_DIR "" )
+  endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )  
+endif()
+
+set(OPENCL_INCLUDE_DIR "")
+if (NOT APPLE)
+  list(APPEND OPENCL_INCLUDE_DIR ${OPENCL_DIST_DIR}/include)
+endif ()
+
 # Compile OpenCL
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/externals/clhpp" "externals_build/clhpp")
-#list(APPEND OSCOPE_EXTRA_LIBS OpenCL)
 
 # Compile NanoGUI
 SET(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL "Turning off nanogui examples" FORCE)
@@ -118,15 +148,16 @@ elseif (APPLE)
   list(APPEND OSCOPE_EXTRA_LIBS ${cocoa_library} ${opengl_library} ${corevideo_library} ${iokit_library} ${opencl_library})
   list(APPEND LIBOSCOPE_EXTRA_SOURCE src/app/ScreenDimensions.mm)
 elseif(CMAKE_SYSTEM MATCHES "Linux")
-  list(APPEND OSCOPE_EXTRA_LIBS GL Xxf86vm Xrandr Xinerama Xcursor Xi X11 pthread dl rt)
+  list(APPEND OSCOPE_EXTRA_LIBS OpenCL GL Xxf86vm Xrandr Xinerama Xcursor Xi X11 pthread dl rt)
 endif()
 
 
 
-include_directories(externals/nanogui/include externals/nanogui/ext/eigen externals/nanogui/ext/glfw/include externals/nanogui/ext/nanovg/src externals_build/clhpp/include include ${CMAKE_CURRENT_BINARY_DIR})
+include_directories(externals/nanogui/include externals/nanogui/ext/eigen externals/nanogui/ext/glfw/include externals/nanogui/ext/nanovg/src externals_build/clhpp/include include ${CMAKE_CURRENT_BINARY_DIR} ${OPENCL_INCLUDE_DIR})
 
 # Needed to generated files
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
+link_directories(${OPENCL_LIB_DIR})
 
 # Set library type
 if (OSCOPE_BUILD_SHARED)
@@ -145,7 +176,7 @@ add_library(oscope ${OSCOPE_LIBRARY_TYPE}
   ${LIBOSCOPE_EXTRA_SOURCE}
   # Fonts etc.
   include/oscope/version.h src/lib/version.cpp
-  include/oscope/sample.h #src/lib/sample.cpp
+  include/oscope/sample.h src/lib/sample.cpp
 )
 
 # Compile/link flags for Oscope
